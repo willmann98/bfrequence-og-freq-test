@@ -12,8 +12,6 @@ const path = "C:/Users/Sindre/go/src/github.com/Brofo/is105-ica03/files/pg100.tx
 
 func main() {
 
-	fmt.Println(os.Args)
-
 	lines := splitFile(bufio.ScanLines)
 	fmt.Println(len(lines))
 

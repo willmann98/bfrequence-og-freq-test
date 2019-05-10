@@ -1,21 +1,23 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"sort"
 
-	filehandler "github.com/Brofo/03/frequence/filehandler"
+	filehandler "github.com/Brofo/is105-ica03/files/lineshift/lineshiftpack/filehandler"
 )
-
-const fil = "C:/Users/Sindre/go/src/github.com/Brofo/is105-ica03/files/pg100.txt"
 
 var lines int
 
 func main() {
+	argument := flag.Arg(0)
+	filename := flag.String("f", argument, "File to read")
+	flag.Parse()
 
-	LineCount(fil)
+	LineCount(*filename)
 	fmt.Println("Linjer i tekstfilen: ", lines)
-	MostFrequentRuneCounter(fil)
+	MostFrequentRuneCounter(*filename)
 }
 
 func MostFrequentRuneCounter(file string) {
